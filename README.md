@@ -32,6 +32,16 @@ npm run build
 
 Then open: http://localhost:8082
 
+## GitHub deployment
+
+- **Repository:** https://github.com/Prajwalmaxx/customer-mangement
+- **CI:** runs on every push (Maven + frontend build)
+- **GitHub Pages (frontend UI):** https://prajwalmaxx.github.io/customer-mangement/
+
+Enable Pages in repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+> GitHub Pages hosts the React UI only. Login and API features need the Spring Boot backend running locally or on a cloud server.
+
 ## API endpoints
 
 | Endpoint | Auth | Description |

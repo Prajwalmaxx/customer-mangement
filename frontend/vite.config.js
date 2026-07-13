@@ -4,12 +4,16 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
 
 export default defineConfig({
   plugins: [react()],
+  base: isGitHubPages ? '/customer-mangement/' : '/',
   build: {
-    outDir: path.resolve(__dirname, '../src/main/resources/static'),
-    emptyOutDir: false,
+    outDir: isGitHubPages
+      ? path.resolve(__dirname, 'dist-pages')
+      : path.resolve(__dirname, '../src/main/resources/static'),
+    emptyOutDir: !isGitHubPages ? false : true,
     rollupOptions: {
       output: {
         entryFileNames: 'assets/app-[hash].js',
