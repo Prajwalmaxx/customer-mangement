@@ -38,7 +38,13 @@ Then open: http://localhost:8082
 - **CI:** runs on every push (Maven + frontend build)
 - **GitHub Pages (frontend UI):** https://prajwalmaxx.github.io/customer-mangement/
 
-Enable Pages in repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+### Enable GitHub Pages (one time)
+
+1. Open **Settings → Pages** in the repo
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**
+3. Choose **Branch:** `gh-pages` and **Folder:** `/ (root)`
+4. Click **Save**
+5. Wait 1–2 minutes, then open https://prajwalmaxx.github.io/customer-mangement/
 
 > GitHub Pages hosts the React UI only. Login and API features need the Spring Boot backend running locally or on a cloud server.
 
